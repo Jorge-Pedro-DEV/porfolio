@@ -1,0 +1,358 @@
+/* PALETA DA BESSA MOTOPEÇAS (#D32F2F, #121212, #FFFFFF) */
+:root {
+    --bessa-red: #d32f2f; /* Vermelho Bessa */
+    --bessa-red-dark: #b71c1c;
+    --bessa-black: #121212; /* Fundo Escuro Automotivo */
+    --bessa-card-bg: #1e1e1e; /* Fundo de Cards e Tabela */
+    --bessa-border: #333333;
+    --bessa-text: #ffffff; /* Texto Claro */
+    --bessa-text-muted: #b0b0b0;  
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bessa-black);
+    color: var(--bessa-text);
+    font-family: var(--font-family);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* CABEÇALHO */
+.main-header {
+    background-color: #000000;
+    border-bottom: 3px solid var(--bessa-red);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+} 
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-badge {
+    background-color: var(--bessa-red);
+    color: #ffffff;
+    font-weight: 900;
+    font-size: 1.4rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.brand-name {
+    font-size: 1.4rem;
+    color: #ffffff;
+}
+
+.brand-name, span {
+    color: var(--color-red);
+}
+
+.brand-sub {
+    font-size: 0.8rem;
+    color: var(--bessa-text-muted);
+}
+
+.main-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-btn {
+    background-color: transparent;
+    color: var(--bessa-border);
+    border: 1px solid var(--color-border);
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background-color: var(--bessa-red);
+    color: var(--bessa-red);
+}
+
+.btn-accent {
+    border-color: var(--bessa-red);
+    color: var(--bessa-red);
+}
+
+
+.btn-accent:hover {
+    background-color: var(--bessa-red);
+    color: #fff;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.main-content {
+    flex: 1;
+    padding: 25px 15px;
+}
+
+.view-section {
+    display: none;
+}
+
+.view-section.active {
+    display: block;
+}
+
+/* CONTROLES DE FORMULÁRIO */
+.input-control {
+    background-color: #2a2a2a;
+    border: 1px solid var(--bessa-border);
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.input-control:focus {
+    outline: none;
+    border-color: var(--bessa-red);
+}
+
+.btn {
+    padding: 10px 16x;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--bessa-red);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--bessa-red-dark);
+}
+
+.btn-secondary {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* GRID DE PRODUTOS */
+.search-filter-bar {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+    .search-bar-container { grid-template-columns: 1fr;}
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: var(--bessa-card-bg);
+    border: 1px solid var(--bessa-border);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    border-color: var(--bessa-red);
+}
+
+.product-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    background-color: #000;
+}
+
+.product-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.product-code {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.product-title {
+    font-size: 1rem;
+    margin: 5px 0 10px;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: var(--bessa-red);
+    font-weight: bold;
+    margin-top: auto;
+}
+
+
+/* PAGINAÇÃO */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* CARRINHO & TABELAS */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+}
+
+@media (max-width: 800px) {
+    .cart-grid {grid-template-columns: 1fr;}
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var((--color-card-bg));
+}
+
+.data-table, th, .data-table, td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--bessa-border);
+    text-align: left;
+}
+
+.cart-summary-box {
+    background-color: var(--bessa-card-bg);
+    border: 1px solid var(--bessa-border);
+    padding: 20px;
+    border-radius: 6px;
+    height: fit-content;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+/* FATURA / COMPROVANTE DIGITAL */
+.invoice-card {
+    margin-top: 25px;
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    border-top: 6px solid var(--bessa-red);
+}
+
+.invoice-footer {
+    margin: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ÁREA RESTRITA E LOGIN */
+.admin-auth-card {
+    max-width: 300px;
+    margin: 40px auto;
+    background-color: var(--bessa-card-bg);
+    padding: 25px;
+    border-radius: 6px;
+    border: 1px solid var(--bessa-border);
+}
+
+.clean-fieldset { border: none;}
+.auth-legend { font-size: 1.2rem; font-weight: bold; margin-bottom: 8px;}
+.auth-desc { color: var(--bessa-text-muted); font-size: 0.85rem; margin-bottom: 15px;}
+
+.password-field-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.btn-togle-pass { 
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.panel-card {
+    background-color: var(--bessa-card-bg);
+    border: 1px solid var(--bessa-border);
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.form-grid{ 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.stat-box {
+    background-color: #151515;
+    padding: 15px;
+    border-left: 3px solid var(--bessa-red);
+}
+
+.hidden { display: none !important;}
+.error-msg { color: #ff5252; font-size: 0.85rem; margin-top: 10px;}
+
+.main-footer {
+    background-color: #000000;
+    border-top: 1px solid var(--bessa-border);
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--bessa-text-muted);
+}
